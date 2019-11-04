@@ -40,14 +40,23 @@ def softmax_with_cross_entropy(preds, target_index):
     probs = preds.copy()
     preds -= np.amax(preds, axis=1)[:, np.newaxis]
     probs = np.exp(preds) / np.sum(np.exp(preds), axis=1)[:, np.newaxis]
-    mask = np.zeros(probs.shape, bool)
-    col_indices = target_index[:, 0]
-    row_indices = np.arange(target_index.shape[0])
-    mask[row_indices, col_indices] = True
-    loss = - np.mean(np.log(probs[mask]))
+    target_index = np.array(target_index)
+    target_index = target_index.reshape(-1, 1)
+
+    if target_index.size == 1 and probs.ndim == 1:
+        loss = - np.sum(np.log(probs[target_index]))
+        return loss, target_index
+    else:
+      mask = np.zeros(probs.shape, bool)
+      col_indices = target_index[:, 0]
+      row_indices = np.arange(target_index.shape[0])
+      mask[row_indices, col_indices] = True
+      loss = - np.mean(np.log(probs[mask]))
+    
     d_preds = probs
     d_preds[mask] -= 1
-    d_preds /= d_preds.shape[0]
+    if preds.ndim == 2:
+        d_preds = d_preds / preds.shape[0]
 
     return loss, d_preds
 

@@ -18,7 +18,10 @@ class TwoLayerNet:
         """
         self.reg = reg
         # TODO Create necessary layers
-        raise Exception("Not implemented!")
+        self.FC1 = FullyConnectedLayer(n_input, hidden_layer_size)
+        self.ReLU = ReLULayer()
+        self.FC2 = FullyConnectedLayer(hidden_layer_size, n_output)
+
 
     def compute_loss_and_gradients(self, X, y):
         """
@@ -33,14 +36,35 @@ class TwoLayerNet:
         # clear parameter gradients aggregated from the previous pass
         # TODO Set parameter gradient to zeros
         # Hint: using self.params() might be useful!
-        raise Exception("Not implemented!")
-        
+        params = self.params()
+        params['W1'].grad = 0
+        params['b1'].grad = 0
+        params['W2'].grad = 0
+        params['b2'].grad = 0
+
         # TODO Compute loss and fill param gradients
         # by running forward and backward passes through the model
+        scores_fc1 = self.FC1.forward(X)
+        scores_relu = self.ReLU.forward(scores_fc1)
+        scores_fc2 = self.FC2.forward(scores_relu)
+
+        loss, grad = softmax_with_cross_entropy(scores_fc2, y)
         
+        grad_fc2 = self.FC2.backward(grad)
+        grad_relu = self.ReLU.backward(grad_fc2)
+        graf_fc1 = self.FC1.backward(grad_relu)
+
         # After that, implement l2 regularization on all params
         # Hint: self.params() is useful again!
-        raise Exception("Not implemented!")
+        W1_loss, W1_grad = l2_regularization(self.FC1.W.value, self.reg)
+        self.FC1.W.grad += W1_grad
+        B1_loss, B1_grad = l2_regularization(self.FC1.B.value, self.reg)
+        self.FC1.B.grad += B1_grad
+        W2_loss, W2_grad = l2_regularization(self.FC2.W.value, self.reg)
+        self.FC2.W.grad += W2_grad
+        B2_loss, B2_grad = l2_regularization(self.FC2.B.value, self.reg)
+        self.FC2.B.grad += B2_grad
+        self.params()
 
         return loss
 
@@ -64,9 +88,9 @@ class TwoLayerNet:
 
     def params(self):
         result = {}
-
-        # TODO Implement aggregating all of the params
-
-        raise Exception("Not implemented!")
+        result['W1'] = self.FC1.W
+        result['b1'] = self.FC1.B
+        result['W2'] = self.FC2.W
+        result['b2'] = self.FC2.B
 
         return result
