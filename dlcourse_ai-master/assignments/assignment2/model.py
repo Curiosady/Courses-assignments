@@ -65,6 +65,7 @@ class TwoLayerNet:
         B2_loss, B2_grad = l2_regularization(self.FC2.B.value, self.reg)
         self.FC2.B.grad += B2_grad
         self.params()
+        loss = loss + W1_loss + B1_loss + W2_loss + B2_loss
 
         return loss
 
@@ -81,9 +82,11 @@ class TwoLayerNet:
         # TODO: Implement predict
         # Hint: some of the code of the compute_loss_and_gradients
         # can be reused
-        pred = np.zeros(X.shape[0], np.int)
+        scores_fc1 = self.FC1.forward(X)
+        scores_relu = self.ReLU.forward(scores_fc1)
+        scores_fc2 = self.FC2.forward(scores_relu)
+        pred = np.argmax(scores_fc2, axis=1)
 
-        raise Exception("Not implemented!")
         return pred
 
     def params(self):
