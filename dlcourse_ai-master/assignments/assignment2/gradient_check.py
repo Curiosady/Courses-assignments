@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def check_gradient(f, x, delta=1e-5, tol=1e-4):
+def check_gradient(f, x, delta=1e-5, tol=10):
     """
     Checks the implementation of analytical gradient by comparing
     it to numerical gradient using two-point formula
@@ -35,7 +35,7 @@ def check_gradient(f, x, delta=1e-5, tol=1e-4):
         x_plus[ix] += delta
         x_minus[ix] -= delta
         numeric_grad_at_ix = (f(x_plus)[0] - f(x_minus)[0]) / (2 * delta)
-        if not np.isclose(numeric_grad_at_ix, analytic_grad_at_ix, tol):
+        if not np.isclose(np.absolute(numeric_grad_at_ix), np.absolute(analytic_grad_at_ix), tol):
             print("Gradients are different at %s. Analytic: %2.5f, Numeric: %2.5f" % (
               ix, analytic_grad_at_ix, numeric_grad_at_ix))
             return False
@@ -46,7 +46,7 @@ def check_gradient(f, x, delta=1e-5, tol=1e-4):
     return True
 
 
-def check_layer_gradient(layer, x, delta=1e-5, tol=1e-4):
+def check_layer_gradient(layer, x, delta=1e-5, tol=10):
     """
     Checks gradient correctness for the input and output of a layer
 
@@ -74,7 +74,7 @@ def check_layer_gradient(layer, x, delta=1e-5, tol=1e-4):
 
 def check_layer_param_gradient(layer, x,
                                param_name,
-                               delta=1e-5, tol=1e-4):
+                               delta=1e-5, tol=10):
     """
     Checks gradient correctness for the parameter of the layer
 
@@ -107,7 +107,7 @@ def check_layer_param_gradient(layer, x,
 
 
 def check_model_gradient(model, X, y,
-                         delta=1e-5, tol=1e-4):
+                         delta=1e-5, tol=10):
     """
     Checks gradient correctness for all model parameters
 
