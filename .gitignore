@@ -27,3 +27,29 @@ dlcourse_ai-master/assignments/assignment2/__pycache__/trainer.cpython-36.pyc
 dlcourse_ai-master/assignments/assignment5/.ipynb_checkpoints/Word2Vec-checkpoint.ipynb
 dlcourse_ai-master/assignments/assignment2/data/test_32x32.mat
 dlcourse_ai-master/assignments/assignment2/data/train_32x32.mat
+dlcourse_ai/assignments/assignment1/__pycache__/dataset.cpython-36.pyc
+dlcourse_ai/assignments/assignment1/__pycache__/gradient_check.cpython-36.pyc
+dlcourse_ai/assignments/assignment1/__pycache__/knn.cpython-36.pyc
+dlcourse_ai/assignments/assignment1/__pycache__/linear_classifer.cpython-36.pyc
+dlcourse_ai/assignments/assignment1/__pycache__/metrics.cpython-36.pyc
+dlcourse_ai/assignments/assignment1/.idea/assignment1.iml
+dlcourse_ai/assignments/assignment1/.idea/misc.xml
+dlcourse_ai/assignments/assignment1/.idea/modules.xml
+dlcourse_ai/assignments/assignment1/.idea/workspace.xml
+dlcourse_ai/assignments/assignment1/.idea/inspectionProfiles/profiles_settings.xml
+dlcourse_ai/assignments/assignment1/.ipynb_checkpoints/KNN-checkpoint.ipynb
+dlcourse_ai/assignments/assignment1/.ipynb_checkpoints/Linear classifier-checkpoint.ipynb
+dlcourse_ai/assignments/assignment1/data/test_32x32.mat
+dlcourse_ai/assignments/assignment1/data/train_32x32.mat
+dlcourse_ai/assignments/assignment2/__pycache__/dataset.cpython-36.pyc
+dlcourse_ai/assignments/assignment2/__pycache__/gradient_check.cpython-36.pyc
+dlcourse_ai/assignments/assignment2/__pycache__/layers.cpython-36.pyc
+dlcourse_ai/assignments/assignment2/__pycache__/metrics.cpython-36.pyc
+dlcourse_ai/assignments/assignment2/__pycache__/model.cpython-36.pyc
+dlcourse_ai/assignments/assignment2/__pycache__/optim.cpython-36.pyc
+dlcourse_ai/assignments/assignment2/__pycache__/trainer.cpython-36.pyc
+dlcourse_ai/assignments/assignment2/.ipynb_checkpoints/Neural Network-checkpoint.ipynb
+dlcourse_ai/assignments/assignment2/.ipynb_checkpoints/PyTorch-checkpoint.ipynb
+dlcourse_ai/assignments/assignment2/.vscode/settings.json
+dlcourse_ai/assignments/assignment2/data/test_32x32.mat
+dlcourse_ai/assignments/assignment2/data/train_32x32.mat
