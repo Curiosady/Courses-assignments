@@ -52,7 +52,7 @@ class TwoLayerNet:
         
         grad_fc2 = self.FC2.backward(grad)
         grad_relu = self.ReLU.backward(grad_fc2)
-        graf_fc1 = self.FC1.backward(grad_relu)
+        grad_fc1 = self.FC1.backward(grad_relu)
 
         # After that, implement l2 regularization on all params
         # Hint: self.params() is useful again!

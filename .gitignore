@@ -53,3 +53,15 @@ dlcourse_ai/assignments/assignment2/.ipynb_checkpoints/PyTorch-checkpoint.ipynb
 dlcourse_ai/assignments/assignment2/.vscode/settings.json
 dlcourse_ai/assignments/assignment2/data/test_32x32.mat
 dlcourse_ai/assignments/assignment2/data/train_32x32.mat
+dlcourse_ai/assignments/assignment3/__pycache__/dataset.cpython-36.pyc
+dlcourse_ai/assignments/assignment3/__pycache__/gradient_check.cpython-36.pyc
+dlcourse_ai/assignments/assignment3/__pycache__/layers.cpython-36.pyc
+dlcourse_ai/assignments/assignment3/__pycache__/metrics.cpython-36.pyc
+dlcourse_ai/assignments/assignment3/__pycache__/model.cpython-36.pyc
+dlcourse_ai/assignments/assignment3/__pycache__/optim.cpython-36.pyc
+dlcourse_ai/assignments/assignment3/__pycache__/trainer.cpython-36.pyc
+.gitignore
+dlcourse_ai/assignments/assignment3/.ipynb_checkpoints/CNN-checkpoint.ipynb
+dlcourse_ai/assignments/assignment3/.ipynb_checkpoints/PyTorch_CNN-checkpoint.ipynb
+dlcourse_ai/assignments/assignment3/data/test_32x32.mat
+dlcourse_ai/assignments/assignment3/data/train_32x32.mat
