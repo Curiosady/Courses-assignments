@@ -65,3 +65,5 @@ dlcourse_ai/assignments/assignment3/.ipynb_checkpoints/CNN-checkpoint.ipynb
 dlcourse_ai/assignments/assignment3/.ipynb_checkpoints/PyTorch_CNN-checkpoint.ipynb
 dlcourse_ai/assignments/assignment3/data/test_32x32.mat
 dlcourse_ai/assignments/assignment3/data/train_32x32.mat
+dlcourse_ai/assignments/assignment4/train_kaggle
+dlcourse_ai/assignments/assignment4/test_kaggle
