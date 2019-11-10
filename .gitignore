@@ -68,3 +68,5 @@ dlcourse_ai/assignments/assignment3/data/train_32x32.mat
 dlcourse_ai/assignments/assignment4/train_kaggle
 dlcourse_ai/assignments/assignment4/test_kaggle
 dlcourse_ai/assignments/assignment4/.ipynb_checkpoints/HotdogOrNot-checkpoint.ipynb
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
